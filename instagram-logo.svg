@@ -1,16 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
-  <defs>
-    <style>
-      @font-face {
-        font-family: 'Billabong';
-        src: url('https://cdn.jsdelivr.net/gh/milktronics/beaglegag@master/public/fonts/billabong-webfont.woff2') format('woff2');
-      }
-      text {
-        font-family: 'Billabong', cursive;
-        font-size: 52px;
-        fill: #000;
-      }
-    </style>
-  </defs>
-  <text x="4" y="50">Instagram</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 68" width="175" height="40">
+  <text x="4" y="54"
+    style="font-family: 'Billabong', 'Brush Script MT', 'Segoe Script', 'Dancing Script', cursive;
+           font-size: 58px;
+           fill: #262626;
+           letter-spacing: 1px;">Instagram</text>
 </svg>
