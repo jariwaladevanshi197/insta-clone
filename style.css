@@ -58,13 +58,15 @@ button {
     margin-bottom: 8px;
 }
 
-.logo-img {
-    height: 29px; /* standard Instagram logo height */
-    filter: invert(0);
+.logo-text {
+    font-family: 'Billabong', cursive;
+    font-size: 30px;
+    letter-spacing: 0.5px;
+    color: #000;
 }
 
 .nav-links {
-    flex-grow: 1;
+    flex-grow: 0;
 }
 
 .nav-links li {
@@ -598,76 +600,51 @@ button {
     color: #262626;
 }
 
-/* Carousel */
+/* Carousel - CSS only with scroll snap */
 .post-image-container.carousel {
     position: relative;
-    overflow: hidden;
     border-radius: 4px;
     border: 1px solid #efefef;
     margin-bottom: 12px;
+    overflow: hidden;
 }
 
 .carousel-track {
     display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+    display: none;
 }
 
 .post-image-container.carousel .post-image {
-    display: none;
     width: 100%;
-    flex-shrink: 0;
-}
-
-.post-image-container.carousel .post-image.active-slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
     display: block;
 }
 
 .carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255,255,255,0.9);
-    border: none;
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 10;
-    font-size: 12px;
-    color: #262626;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
-
-.carousel-btn:hover {
-    background: rgba(255,255,255,1);
-}
-
-.carousel-prev {
-    left: 10px;
-}
-
-.carousel-next {
-    right: 10px;
+    display: none;
 }
 
 .carousel-dots {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
+    justify-content: center;
     gap: 4px;
+    padding: 8px 0 4px;
+    background: #fff;
 }
 
 .dot {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.5);
-    cursor: pointer;
-    transition: background 0.2s;
+    background: #dbdbdb;
 }
 
 .dot.active {
@@ -688,16 +665,8 @@ button {
     .sidebar {
         width: 72px;
     }
-    .logo-img {
+    .logo-text {
         display: none;
-    }
-    /* Provide a smaller icon logo instead of text logo on mobile */
-    .logo::before {
-        content: "\f16d"; /* FontAwesome instagram icon */
-        font-family: "Font Awesome 6 Brands";
-        font-size: 24px;
-        display: block;
-        text-align: center;
     }
     .nav-links span, .more-link span {
         display: none;

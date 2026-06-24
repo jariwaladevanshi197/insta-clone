@@ -6,12 +6,13 @@
     <title>Instagram Clone</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/billabong" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation Sidebar -->
     <nav class="sidebar">
         <div class="logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2560px-Instagram_logo.svg.png" alt="Instagram" class="logo-img">
+            <span class="logo-text">Instagram</span>
         </div>
         <ul class="nav-links">
             <li><a href="#" class="active"><i class="fa-solid fa-house"></i> <span>Home</span></a></li>
@@ -383,33 +384,5 @@
         </aside>
     </main>
 
-    <script>
-        // Carousel functionality
-        document.querySelectorAll('.carousel').forEach(carousel => {
-            const track = carousel.querySelector('.carousel-track');
-            const slides = carousel.querySelectorAll('.post-image');
-            const dots = carousel.querySelectorAll('.dot');
-            const prevBtn = carousel.querySelector('.carousel-prev');
-            const nextBtn = carousel.querySelector('.carousel-next');
-            let current = 0;
-
-            function goTo(index) {
-                slides[current].classList.remove('active-slide');
-                dots[current].classList.remove('active');
-                current = (index + slides.length) % slides.length;
-                slides[current].classList.add('active-slide');
-                dots[current].classList.add('active');
-                prevBtn.style.display = current === 0 ? 'none' : 'flex';
-                nextBtn.style.display = current === slides.length - 1 ? 'none' : 'flex';
-            }
-
-            prevBtn.addEventListener('click', () => goTo(current - 1));
-            nextBtn.addEventListener('click', () => goTo(current + 1));
-            dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
-
-            // Init
-            goTo(0);
-        });
-    </script>
 </body>
 </html>
