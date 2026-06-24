@@ -66,12 +66,11 @@ button {
     margin-bottom: 8px;
 }
 
-.logo-text {
-    font-family: 'Pacifico', cursive;
-    font-size: 26px;
-    color: #000;
-    font-weight: 400;
-    letter-spacing: -0.5px;
+.logo-img {
+    height: 30px;
+    width: auto;
+    display: block;
+    mix-blend-mode: multiply;
 }
 
 .nav-links {
@@ -674,7 +673,7 @@ button {
     .sidebar {
         width: 72px;
     }
-    .logo-text {
+    .logo-img {
         display: none;
     }
     .nav-links span, .more-link span {
