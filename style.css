@@ -1,0 +1,609 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap');
+
+/* General Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* Utilities */
+.fw-bold { font-weight: 600; }
+.text-muted { color: #737373; font-size: 14px;}
+.text-blue { color: #0095f6; font-weight: 600; }
+.text-black { color: #000; }
+.mt-3 { margin-top: 12px; }
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 244px;
+    height: 100vh;
+    border-right: 1px solid #dbdbdb;
+    padding: 8px 12px 20px 12px;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    background-color: #fff;
+}
+
+.logo {
+    padding: 25px 12px 16px 12px;
+    margin-bottom: 8px;
+}
+
+.logo-img {
+    height: 29px; /* standard Instagram logo height */
+    filter: invert(0);
+}
+
+.nav-links {
+    flex-grow: 1;
+}
+
+.nav-links li {
+    margin-bottom: 4px;
+}
+
+.nav-links a, .more-link a {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+    color: #000;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+.nav-links a:hover, .more-link a:hover {
+    background-color: #fafafa;
+}
+
+.nav-links a.active {
+    font-weight: 700;
+}
+
+.nav-links i, .more-link i {
+    font-size: 24px;
+    width: 24px;
+    margin-right: 16px;
+    transition: transform 0.2s ease;
+}
+
+.nav-links a:hover i:not(.fa-solid.fa-house), .more-link a:hover i {
+    transform: scale(1.05);
+}
+
+.nav-profile-img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+/* Main Content Area */
+.main-content {
+    margin-left: 244px;
+    width: calc(100% - 244px);
+    display: flex;
+    justify-content: center;
+    padding-top: 32px;
+}
+
+/* Feed Section */
+.feed {
+    width: 470px;
+    margin-right: 64px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Stories */
+.stories-container {
+    display: flex;
+    gap: 14px;
+    padding: 16px 0;
+    margin-bottom: 24px;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+}
+
+.stories-container::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
+
+.story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 66px;
+    cursor: pointer;
+}
+
+.story-img-container {
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    padding: 2px;
+    background: #dbdbdb; /* default read state */
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.story-img-container.unread {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.story-img-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    object-fit: cover;
+}
+
+.story span {
+    font-size: 12px;
+    color: #262626;
+    max-width: 66px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Posts */
+.posts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post {
+    width: 470px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #efefef;
+    padding-bottom: 15px;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 12px 0;
+}
+
+.post-user-info {
+    display: flex;
+    align-items: center;
+}
+
+.post-avatar-container {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    padding: 2px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-avatar-container.unread {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.post-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    object-fit: cover;
+}
+
+.post-username {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.post-time {
+    color: #737373;
+    font-size: 14px;
+}
+
+.post-options {
+    cursor: pointer;
+    color: #262626;
+}
+
+.post-image-container {
+    border-radius: 4px;
+    border: 1px solid #efefef;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.post-image {
+    width: 100%;
+    display: block;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 12px;
+}
+
+.post-actions i {
+    font-size: 24px;
+    cursor: pointer;
+    color: #000;
+}
+
+.post-actions i:hover {
+    color: #8e8e8e;
+}
+
+.post-actions-left {
+    display: flex;
+    gap: 16px;
+}
+
+.post-likes {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.liked-by-avatar {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.post-caption {
+    font-size: 14px;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.post-comments {
+    color: #737373;
+    font-size: 14px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.post-comments-list {
+    margin-bottom: 8px;
+}
+
+.post-comment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.comment-like {
+    font-size: 12px;
+    color: #737373;
+    cursor: pointer;
+}
+
+.post-add-comment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 8px;
+}
+
+.comment-input-wrapper {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.comment-input-wrapper i {
+    font-size: 18px;
+    color: #737373;
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.comment-input-wrapper input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    color: #000;
+}
+
+.comment-input-wrapper input::placeholder {
+    color: #737373;
+}
+
+.post-btn {
+    color: #0095f6;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.post-btn:hover {
+    color: #00376b;
+}
+
+/* Feed Suggestions Carousel */
+.feed-suggestions {
+    width: 100%;
+    padding: 16px 0;
+    margin-bottom: 24px;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+}
+
+.suggestions-header {
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.suggestions-carousel-container {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.suggestions-carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.suggestion-card {
+    min-width: 160px;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.close-card {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: #dbdbdb;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.card-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 12px;
+}
+
+.card-name {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.card-username {
+    font-size: 12px;
+    margin-bottom: 16px;
+    color: #737373;
+}
+
+.card-btn {
+    background-color: #0095f6;
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+    width: 100%;
+}
+
+.card-btn:hover {
+    background-color: #1877f2;
+}
+
+/* Right Sidebar */
+.right-sidebar {
+    width: 319px;
+    margin-top: 24px;
+}
+
+.user-profile-summary {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.large-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+.profile-names {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.profile-names .username {
+    font-size: 14px;
+}
+
+.profile-names .real-name {
+    font-size: 14px;
+    color: #737373;
+}
+
+.action-btn {
+    cursor: pointer;
+}
+
+.action-btn:hover {
+    color: #00376b;
+}
+
+.suggestions-header-side {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.see-all-hover:hover {
+    color: #8e8e8e;
+}
+
+.suggestion-list {
+    margin-bottom: 30px;
+}
+
+.suggestion-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.suggestion-item:last-child {
+    margin-bottom: 0;
+}
+
+.suggestion-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.suggestion-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.suggestion-info .suggestion-username {
+    font-size: 14px;
+}
+
+.suggestion-info .suggestion-reason {
+    font-size: 12px;
+    color: #737373;
+}
+
+/* Footer in right sidebar */
+.side-footer {
+    padding-top: 15px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    margin-bottom: 16px;
+}
+
+.footer-links li a {
+    position: relative;
+    font-size: 12px;
+}
+
+.footer-links li a:hover {
+    text-decoration: underline;
+}
+
+.footer-links li::after {
+    content: " \00B7 \0020";
+    white-space: pre;
+    font-size: 12px;
+}
+
+.footer-links li:last-child::after {
+    content: "";
+}
+
+.copyright {
+    font-size: 12px;
+}
+
+/* Responsiveness */
+@media (max-width: 1150px) {
+    .right-sidebar {
+        display: none;
+    }
+    .feed {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 72px;
+    }
+    .logo-img {
+        display: none;
+    }
+    /* Provide a smaller icon logo instead of text logo on mobile */
+    .logo::before {
+        content: "\f16d"; /* FontAwesome instagram icon */
+        font-family: "Font Awesome 6 Brands";
+        font-size: 24px;
+        display: block;
+        text-align: center;
+    }
+    .nav-links span, .more-link span {
+        display: none;
+    }
+    .logo {
+        padding: 25px 0 16px 0;
+    }
+    .nav-links a, .more-link a {
+        justify-content: center;
+        padding: 12px 0;
+    }
+    .nav-links i, .more-link i, .nav-profile-img {
+        margin-right: 0;
+    }
+    .main-content {
+        margin-left: 72px;
+        width: calc(100% - 72px);
+    }
+}
